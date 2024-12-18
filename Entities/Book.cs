@@ -24,14 +24,14 @@ namespace LibraryManagementSystem.Entities
         public void Borrow()
         {
             if (IsBorrowed == true)
-                throw new InvalidOperationException("Cannot borrow book which was already borrowed");
+                throw new InvalidOperationException("This book is currently unavailable");
             IsBorrowed = true;
         }
 
         public void ReturnBook()
         {
             if (IsBorrowed == false)
-                throw new InvalidOperationException("Cannot return book which was not borrowed");
+                return;
             IsBorrowed = false;
         }
 
